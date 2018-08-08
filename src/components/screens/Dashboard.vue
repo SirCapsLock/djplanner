@@ -1,15 +1,30 @@
 <template>
   <div class="hello">
-    <h1 class="mb-4">{{ msg }}</h1>
+    <h1 class="mb-4 text-center">
+      <span class="font-pacifico font-bold">Congratulations</span><br>
+      <span>Rebecca & Enrique</span>
+    </h1>
+    <div class="flex justify-center">
+      <ProfilePic class="h-24"></ProfilePic>
+    </div>
+    <div class="flex justify-center">
+      <DateBox :date="eventDate"></DateBox>
+    </div>
+    <div>
+      Your To-Do List
+    </div>
   </div>
 </template>
 
 <script>
+import DateBox from '@/components/modules/DateBox';
+
 export default {
   name: 'Dashboard',
+  components: { DateBox },
   data() {
     return {
-      msg: 'Welcome, Enrique!',
+      eventDate: new Date('2017-12-30 00:00'),
     };
   },
 };
@@ -17,7 +32,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
+h1,
+h2 {
   font-weight: normal;
 }
 ul {

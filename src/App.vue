@@ -1,8 +1,9 @@
 <template>
   <div id="app">
+    <Header></Header>
     <div class="flex flex-wrap min-h-screen">
       <sidebar></sidebar>
-      <main class="w-full lg:w-4/5 flex-no-shrink bg-white p-8">
+      <main class="w-full lg:w-5/6 flex-no-shrink bg-white p-8">
         <router-view/>
       </main>
     </div>
@@ -11,11 +12,12 @@
 
 <script>
 import '@/assets/styles/main.css';
+import Header from '@/components/containers/header/Header';
 import Sidebar from '@/components/containers/sidebar/Sidebar';
 
 export default {
   name: 'App',
-  components: { Sidebar },
+  components: { Header, Sidebar },
 };
 </script>
 
